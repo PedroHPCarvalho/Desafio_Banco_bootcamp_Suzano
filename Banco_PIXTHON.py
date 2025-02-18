@@ -2,6 +2,23 @@ Conta = "P-1234"
 saldo_atual = 0.0
 Qtd_Saque = 0
 Historico_Operações = list()
+Lista_Usuarios = list()
+Contas_Correntes = list()
+
+
+def criar_usuario(nome, nro_conta):
+    global Lista_Usuarios
+    Lista_Usuarios.append(dict([('nome', nome), ('nro_conta', nro_conta)]))
+    print("Usuario Criado")
+
+
+def criar_conta_corrente(Lista_Usuarios, nro_conta):
+    conta_corrente = {
+        "nome": Lista_Usuarios["nome"],
+        "nro_conta": nro_conta,
+        "saldo"
+    }
+    
 
 
 def depositar(saldo_dep):
@@ -38,8 +55,6 @@ def extrato():
         print([i])
 
 
-depositar(100)
-depositar(1000)
-depositar(1000)
-saque(500)
-extrato()
+criar_usuario("Pedro", "0-001")
+print(Lista_Usuarios)
+criar_conta_corrente("0-001")
